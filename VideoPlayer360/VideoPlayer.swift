@@ -31,15 +31,9 @@ class VideoPlayer : NSObject {
     let avPlayerItem = AVPlayerItem(url: videoUrl)
     player = AVPlayer(playerItem: avPlayerItem)
     
-   // let  playerLayer = AVPlayerLayer(player: player)
-   // playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-    
-  //  playerLayer.frame = view.frame
-    
     let playerLayer = view.layer as! AVPlayerLayer
     playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
     playerLayer.player = player
-   // view.layer.addSublayer(playerLayer)
     
   }
   
