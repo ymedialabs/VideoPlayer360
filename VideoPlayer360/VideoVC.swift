@@ -18,10 +18,11 @@ class VideoVC: UIViewController {
     var isSeeking = true
   
   @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var playerView: PlayerView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
       if let fileName = fileName , let fileExtension = fileExtension {
         
         videoPlayer = VideoPlayer(videoFileName: fileName, videoFileType: fileExtension)
@@ -36,7 +37,7 @@ class VideoVC: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    videoPlayer?.setUpPlayerInView(view: view)
+    videoPlayer?.setUpPlayerInView(view: playerView)
     isSeeking = false
     
     if let videoPlayer = videoPlayer {

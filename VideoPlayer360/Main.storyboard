@@ -5,14 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Sharp Sans No1 Bold.otf">
-            <string>SharpSansNo1-Bold</string>
-        </array>
-        <array key="Sharp Sans No1 Semibold.otf">
-            <string>SharpSansNo1-Semibold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Rfw-gb-sHM">
@@ -33,7 +25,7 @@
         <!--ProductVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProductVC" customModule="_60VideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProductVC" customModule="VideoPlayer360" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -45,7 +37,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="296" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yvT-mF-q7Y">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PRODUCT_CELL" rowHeight="296" id="JKx-pk-O8Q" customClass="ProductCell" customModule="_60VideoPlayer" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PRODUCT_CELL" rowHeight="296" id="JKx-pk-O8Q" customClass="ProductCell" customModule="VideoPlayer360" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKx-pk-O8Q" id="lnU-s7-JaP">
@@ -53,11 +45,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-ju-aQp">
-                                                    <fontDescription key="fontDescription" name="SharpSansNo1-Bold" family="Sharp Sans No1" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89H-a3-HrM" customClass="PlayerView" customModule="_60VideoPlayer" customModuleProvider="target">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89H-a3-HrM" customClass="PlayerView" customModule="VideoPlayer360" customModuleProvider="target">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fC7-GK-uby">
@@ -70,7 +62,7 @@
                                                         <constraint firstAttribute="width" constant="60" id="1jR-pQ-4UM"/>
                                                         <constraint firstAttribute="height" constant="44" id="IkP-3R-g3m"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="SharpSansNo1-Semibold" family="Sharp Sans No1" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                     <state key="normal" title="Buy"/>
                                                 </button>
                                             </subviews>
@@ -123,26 +115,34 @@
         <!--VideoVC-->
         <scene sceneID="BjP-I8-BEy">
             <objects>
-                <viewController id="SkR-bI-fsj" customClass="VideoVC" customModule="_60VideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SkR-bI-fsj" customClass="VideoVC" customModule="VideoPlayer360" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2MF-rB-rB2"/>
                         <viewControllerLayoutGuide type="bottom" id="bmM-9C-Mxu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bSx-7h-phN" customClass="PlayerView" customModule="_60VideoPlayer" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="bSx-7h-phN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eao-u1-lYa" customClass="PlayerView" customModule="VideoPlayer360" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-hU-Zrz"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9gf-hU-Zrz" firstAttribute="leading" secondItem="bSx-7h-phN" secondAttribute="leading" id="6RY-zc-5cn"/>
                             <constraint firstItem="bmM-9C-Mxu" firstAttribute="top" secondItem="9gf-hU-Zrz" secondAttribute="bottom" id="8l4-U1-qMU"/>
+                            <constraint firstItem="Eao-u1-lYa" firstAttribute="top" secondItem="2MF-rB-rB2" secondAttribute="bottom" id="HuB-BG-1UB"/>
+                            <constraint firstItem="bmM-9C-Mxu" firstAttribute="top" secondItem="Eao-u1-lYa" secondAttribute="bottom" id="Ida-z5-VtO"/>
+                            <constraint firstItem="Eao-u1-lYa" firstAttribute="leading" secondItem="bSx-7h-phN" secondAttribute="leading" id="J6T-j3-UEa"/>
+                            <constraint firstAttribute="trailing" secondItem="Eao-u1-lYa" secondAttribute="trailing" id="jWp-5T-O8g"/>
                             <constraint firstAttribute="trailing" secondItem="9gf-hU-Zrz" secondAttribute="trailing" id="s1G-Fl-SPL"/>
                             <constraint firstItem="9gf-hU-Zrz" firstAttribute="top" secondItem="2MF-rB-rB2" secondAttribute="bottom" id="yHJ-4k-ai3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playerView" destination="Eao-u1-lYa" id="0zg-kl-696"/>
                         <outlet property="scrollView" destination="9gf-hU-Zrz" id="2yK-br-2Or"/>
                     </connections>
                 </viewController>

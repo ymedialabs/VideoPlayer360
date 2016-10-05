@@ -21,18 +21,13 @@ class ProductVC: UIViewController {
   
     override func viewDidLoad() {
       
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-      videos.append(["fileName" : "video", "fileExtension" : "mov", "productName" : "Tea"])
-
-      
+      videos.append(["fileName" : "shoe-4", "fileExtension" : "mp4", "productName" : "Trainers"])
+      videos.append(["fileName" : "shoe-3", "fileExtension" : "mp4", "productName" : "High Heels"])
+      videos.append(["fileName" : "shoe-2", "fileExtension" : "mp4", "productName" : "Sneakers"])
+           
       tableView.reloadData()
       tableView.rowHeight = UITableViewAutomaticDimension
+      navigationController?.navigationBar.tintColor = UIColor.black
       
         super.viewDidLoad()
 
@@ -66,6 +61,9 @@ class ProductVC: UIViewController {
         videoVC?.fileName = video["fileName"]
         videoVC?.fileExtension = video["fileExtension"]
         
+          let backItem = UIBarButtonItem()
+          backItem.title = ""
+          navigationItem.backBarButtonItem = backItem
         }
         
       }
@@ -107,6 +105,7 @@ extension ProductVC: UITableViewDataSource, UITableViewDelegate {
         cell.duration = videoPlayer.durationOfVideo()
         cell.scrollView.delegate = self
       }
+      cell.productNameLabel.text = video["productName"]
 
     }
     return cell
@@ -176,7 +175,7 @@ extension ProductVC {
         
         for cell in viewController.tableView.visibleCells {
           
-          if let productCell = cell as? ProductCell {
+          if let productCell = cell as? ProductCell , productCell.videoPlayer != nil {
             let rollDegrees = viewController.radiansToDegrees(rad: roll)
             
             if productCell.isSeeking == false {
